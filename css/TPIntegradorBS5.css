@@ -1,0 +1,16 @@
+.nav-item{
+    align-items: flex-end;
+}
+
+.carousel-item img {
+    filter: brightness(40%);
+}
+
+.texto{
+    font-size: 0.9rem;
+    color: grey;
+}
+
+
+
+
