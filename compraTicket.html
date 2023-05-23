@@ -20,8 +20,9 @@
   <div class="container">
     <!-- Menú Principal -->
     <div class="row">
+      
       <div class="col">
-  
+
         <!-- Menú Superior -->
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
           <div class="container-fluid">
@@ -29,7 +30,7 @@
             <a class="navbar-brand" href="index.html">
               <img src="imagenes/codoacodo.png" alt="CodoACodo" width="100px">
               <span class="fs-5">Conf BsAs</span>
-  
+
             </a>
             <!-- Navegador -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -55,99 +56,210 @@
             </div>
           </div>
         </nav>
-  
+
       </div>
     </div>
-  
+
+    <!-- Area Formulario -->
+
+    <div class="row d-flex justify-content-center ">
+      
+      <div class="col-md-auto"></div>
+
+      <div class="col-md-3 border border-primary m-1">
+
+        <div class=" border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title m-2">Estudiante</h5>
+            <p class="card-text fs-6 m-2">Tienen un descuento</p>
+            <p class="card-text fs-5 m-2">80%</p>
+            <small class="card-text m-2 text-black-50">*presentar documentación</small>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3 border border-info m-1">
+
+        <div class=" border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title m-2">Trainee</h5>
+            <p class="card-text fs-6 m-2">Tienen un descuento</p>
+            <p class="card-text fs-5 m-2">50%</p>
+            <small class="card-text m-2 text-black-50">*presentar documentación</small>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3 border border-warning m-1">
+
+        <div class=" border-0">
+          <div class="card-body text-center">
+            <h5 class="card-title m-2">Junior</h5>
+            <p class="card-text fs-6 m-2">Tienen un descuento</p>
+            <p class="card-text fs-5 m-2">15%</p>
+            <small class="card-text m-2 text-black-50">*presentar documentación</small>
+          </div>
+        </div>
+
+      </div>
     
-  
-    
-      <!-- Area Formulario -->
-  
-      <div class="row " id="comprar">
-        <div class="col">
-  
-          <hr class="m-2 text-danger w-100 text-center">
-          <div class="fs-3 text-center my-3">Comprar entradas</div>
-  
+      <div class="col-md-auto"></div>
+    </div>
+
+
+    <!-- Area Formulario -->
+
+    <div class="row " id="comprar">
+      
+      <div class="col">
+
+        <hr class="m-2 text-danger w-100 text-center">
+        <div class="fs-3 text-center my-1">Comprar entradas</div>
+        <div class="fs-1 text-center mb-1">VALOR DE TICKET $200</div>
+      </div>
+    </div>
+
+    <form action="#" method="post">
+      <div class="row mx-5">
+        
+        <div class="col-md-auto"></div>
+
+        <div class="col-md mb-3">
+          <input type="text" name="nombre" id="nombre" class="form-control" required placeholder="Nombre">
+        </div>
+        <div class="col-md mb-3">
+          <input type="text" name="apellido" id="apellido" class="form-control" required placeholder="Apellido">
+        </div>
+
+        <div class="col-md-auto"></div>
+
+      </div>
+
+      <div class="row mx-5">
+        
+        <div class="col-md-auto"></div>
+        
+        <div class="col-md mb-3">
+          <input type="email" name="email" id="email" class="form-control" required placeholder="email">
+        </div>
+        
+        <div class="col-md-auto"></div>
+
+      </div>
+
+      <div class="row mx-5">
+        
+        <div class="col-md-auto"></div>
+        
+        <div class="col-md mb-3">
+          <span>Cantidad</span>
+          <input type="number" name="cantEntradas" id="cantEntradas" onkeyup="calcularPrecioFinal()"
+            class="form-control" required placeholder="Cantidad de Entradas">
+          
+        </div>
+
+        <div class="col-md mb-3">
+          <span>Categoría</span>
+          <select class="form-select" name="porcDescuento" id="porcDescuento" onchange="calcularPrecioFinal()">
+            <option value="80">Estudiante</option>
+            <option value="50">Trainee</option>
+            <option value="15">Junior</option>
+          </select>
+        </div>
+
+        
+        <div class="col-md-auto"></div>
+
+      </div>
+
+      <div class="row mx-5">
+        
+        <div class="col-md-auto"></div>
+        
+        <div class="col-md mb-3">
+          <input type="text" name="precioFinal" id="precioFinal" class="form-control" disabled
+            placeholder="Total a Pagar: $">
+          
+        </div>
+
+        <div class="col-md-auto"></div>
+
+      </div>
+
+      <div class="row mx-5 mb-5">
+        
+        <div class="col-md-auto"></div>
+
+        <div class="col-md d-grid gap-2 col-6 mx-auto mb-3">
+          <input type="submit" onclick="limpiarInput()" value="Borrar" class="btn btn-success">
+        </div>
+        <div class="col-md d-grid gap-2 col-6 mx-auto mb-3">
+          <!-- Button trigger modal -->
+          <button type="button" onclick="resumen()" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Resumen
+          </button>
+        </div>
+
+        <div class="col-md-auto"></div>
+      
+        
+
+      </div>
+     
+      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div id="nombreMod">Nombre: </div>
+              <div id="apellidoMod">Apellido: </div>
+              <div id="emailMod">Email: </div>
+              <div id="cantidadMod">Cantidad: </div>
+              <div id="totalMod">Total a Pagar: $ </div>
+              
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
         </div>
       </div>
-  
-      <form action="#" method="post">
-        <div class="row mx-5">
-          <div class="col-md mb-3">
-            <input type="text" name="nombre" id="nombre" class="form-control" required placeholder="Nombre">
-          </div>
-          <div class="col-md mb-3">
-            <input type="text" name="apellido" id="apellido" class="form-control" required placeholder="Apellido">
-          </div>
-        </div>
-  
-        <div class="row mx-5">
-          <div class="col-md mb-3">
-            <input type="email" name="email" id="email" class="form-control" required placeholder="email">
-          </div>
-          <div class="col-md mb-3">
-            <input type="text" name="tel" id="tel" class="form-control" required placeholder="telefono móvil">
-          </div>
-        </div>
-  
-        <div class="row mx-5">
-          <div class="col-md mb-3">
-            <input type="number" name="cantEntradas" id="cantEntradas" onkeyup="calcularPrecioFinal()"
-              class="form-control" required placeholder="Cantidad de Entradas">
-            <small class="m-1">Precio por entrada $1000</small>
-          </div>
-  
-          <div class="col-md mb-3">
-            <select class="form-select" name="porcDescuento" id="porcDescuento" onchange="calcularPrecioFinal()">
-              <option value="10">Particular</option>
-              <option value="30">Estudiante</option>
-              <option value="50">Orador</option>
-            </select>
-          </div>
-  
-          <div class="col-md mb-3">
-            <input type="text" name="precioFinal" id="precioFinal" class="form-control" disabled
-              placeholder="Costo de entradas">
-            <div id="precioFinal2" class="bg-secondary text-light m-1 p-1 rounded">Precio Final</div>
-          </div>
-  
-        </div>
-  
-        <div class="row mb-5">
-          <div class="col">
-            <input type="submit" value="Comprar" class="btn btn-primary">
-          </div>
-        </div>
-  
-  
-  
-        <!-- PiePagina -->
-        <div class="container fluid">
-          <div class="row d-flex justify-content-evenly align-items-center bg-secondary p-2">
-  
-            <div class="col-md-1"><a href="" class="text-decoration-none text-light">Preguntas Frecuentes</a></div>
-            <div class="col-md-1"><a href="" class="text-decoration-none text-light">Contáctanos</a></div>
-            <div class="col-md-1"><a href="" class="text-decoration-none text-light">Estudiantes</a></div>
-            <div class="col-md-1"><a href="" class="text-decoration-none text-light">Conferencias</a></div>
-            <div class="col-md-1"><a href="" class="text-decoration-none text-light">Prensa</a></div>
-            <div class="col-md-1 align-content-center"><a href="" class="text-decoration-none text-light">Terminos y
-                Condiciones</a></div>
-            <div class="col-md-1"><a href="" class="text-decoration-none text-light">Privacidad</a></div>
-          </div>
-        </div>
-    </div>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-      </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-      crossorigin="anonymous"></script>
 
-    <script src="js/TPIntegradorBS5.js"></script>
+
+
+      <!-- PiePagina -->
+      <div class="container fluid">
+        <div class="row d-flex justify-content-evenly align-items-center bg-secondary p-2">
+
+          <div class="col-md-1"><a href="" class="text-decoration-none text-light">Preguntas Frecuentes</a></div>
+          <div class="col-md-1"><a href="" class="text-decoration-none text-light">Contáctanos</a></div>
+          <div class="col-md-1"><a href="" class="text-decoration-none text-light">Estudiantes</a></div>
+          <div class="col-md-1"><a href="" class="text-decoration-none text-light">Conferencias</a></div>
+          <div class="col-md-1"><a href="" class="text-decoration-none text-light">Prensa</a></div>
+          <div class="col-md-1 align-content-center"><a href="" class="text-decoration-none text-light">Terminos y
+              Condiciones</a></div>
+          <div class="col-md-1"><a href="" class="text-decoration-none text-light">Privacidad</a></div>
+        </div>
+      </div>
+  </div>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+
+  <script src="js/TPIntegradorBS5.js"></script>
 
 </body>
 
